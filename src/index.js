@@ -4,7 +4,7 @@ const conectadb = require('../models/conecta')
 //FAZ O UPDATE
 const fazUp = require('../models/update')
 
-async function pegaUltimoId(){
+async function iniciaPrograma(){
     //PEGA O ULTIMO ID DO BANCO
     const con = await conectadb
     const [pegaUltimo] = await con.query("SELECT MAX(ptts_code) as ultimoid FROM tb_ptts;") 
@@ -75,4 +75,5 @@ async function pegaUltimoId(){
 
 }
 
-pegaUltimoId()
+iniciaPrograma()
+ 

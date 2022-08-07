@@ -12,4 +12,4 @@ async function fazUpdate(resultFinalPrimeiroNome,resultFinalUltimoNome, id){
 module.exports = fazUpdate
 
 //update tb_ptts set ptts_fnme = "Wesley" where ptts_code = 379;
-//update tb_ptts set ptts_lnme = "Vieira Santos" where ptts_code = 379;
+//update tb_ptts set ptts_lnme = "Vieira Santos" where ptts_code = 379; 
