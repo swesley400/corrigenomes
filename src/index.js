@@ -32,10 +32,28 @@ async function iniciaPrograma(){
             let junta = ''
             let junta2 = ''
             let junta3 = ''
+            let casoExtra= ''
 
             // INICIA O LOOP QUE VAI VERIFICAR SE ULTIMO NOME É COLADO
 
             for(i=0; i<retorna.length; i++){
+                
+                numero = retorna.length*1-1
+                casoExtra = retorna[numero]
+
+                //CASO ULTIMO NOME ESTEJA GENERICO
+                if(ultimoNome == "Generic"){
+
+                    let algo = primeiroNome.replace(retorna[numero],"")
+                    fazUp(algo, casoExtra, ptts_id)
+
+                }
+                
+                //CASO SÓ REPITA O ULTIMO NOME
+                if (casoExtra == ultimoNome ){
+                    let algo = primeiroNome.replace(retorna[numero],"")
+                    fazUp(algo, casoExtra, ptts_id)
+                }
 
                 junta =  junta + retorna[i]
                 if (retorna.length <= 3){
@@ -76,4 +94,3 @@ async function iniciaPrograma(){
 }
 
 iniciaPrograma()
- 
