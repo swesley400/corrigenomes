@@ -6,7 +6,7 @@ const fazUp = require('../models/update')
 
 async function iniciaPrograma(){
     //PEGA O ULTIMO ID DO BANCO
-    const con = await conectadb
+    const con = conectadb
     const [pegaUltimo] = await con.query("SELECT MAX(ptts_code) as ultimoid FROM tb_ptts;") 
     const esperaUltimo = await pegaUltimo
     const ultimo = esperaUltimo[0].ultimoid
@@ -71,16 +71,17 @@ async function iniciaPrograma(){
                 if(junta2 == ultimoNome){
                
                     console.log(`Sou igual: variavel junta: ${junta2} variavel: ${ultimoNome}` )
-                    var result1 = primeiroNome.replace(junta3,"")
-                    var result2 = junta3.replace(" ","")
+                    let result1 = primeiroNome.replace(junta3,"")
+                    let result2 = junta3.replace(" ","")
                     //console.log("Sou um resultado :", init)
                     //MANDA PARA A FUNCAO OS PARAMETROS DE TROCA
                     fazUp(result1, result2, ptts_id)
                     break
                 }
                 else{
-                   // console.log("Nome não conferem")
-             }
+                    console.log("Nome não conferem")
+                    return
+                }
 
             }
 
